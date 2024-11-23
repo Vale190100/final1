@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Reclamos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #f1f3f5;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .card:hover {
+            background-color: #e9ecef;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #007bff;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .card h2::before {
+            content: attr(data-icon);
+            font-size: 22px;
+            margin-right: 10px;
+        }
+
+        .value {
+            font-size: 26px;
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            font-size: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #dee2e6;
+            padding: 10px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Footer styles */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .value {
+                margin-top: 8px;
+            }
+
+            table,
+            th,
+            td {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📈 Informe de Reclamos</h1>
+
+        <div class="card" data-icon="📋">
+            <h2>Total de Reclamos</h2>
+            <span class="value">{{reclamosTotales}}</span>
+        </div>
+
+        <div class="card" data-icon="✅">
+            <h2>Reclamos Finalizados</h2>
+            <span class="value">{{reclamosFinalizados}}</span>
+        </div>
+
+        <div class="card" data-icon="❌">
+            <h2>Reclamos No Finalizados</h2>
+            <span class="value">{{reclamosNoFinalizados}}</span>
+        </div>
+
+        <div class="card" data-icon="🔧">
+            <h2>Tipo de Reclamo más Frecuente</h2>
+            <span class="value">{{descripcionTipoRreclamoFrecuente}} ({{cantidadTipoRreclamoFrecuente}})</span>
+        </div>
+
+        <div class="footer">
+            <p>Informe generado por Programación 3 - Año 2024</p>
+        </div>
+    </div>
+</body>
+
+</html>
